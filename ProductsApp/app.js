@@ -8,7 +8,7 @@ const product = require('./routes/product.route');
 
 // initialize our express app
 const app = express();
-let port = process.env.PORT || 1234;
+//let port = process.env.PORT || 1234;
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
@@ -35,6 +35,6 @@ app.use('/products', product);
 
 // create our dedicating a port and telling our express app
 
-app.listen(port, () => {
-    console.log('Server is up and running on port number' + port);
+app.listen((process.env.PORT || 1234), () => {
+    console.log('Server is up and running on port number');
 });
